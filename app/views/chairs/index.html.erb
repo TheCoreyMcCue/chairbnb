@@ -1,0 +1,9 @@
+<div class="container">
+<h1>All Chairs</h1>
+
+<ol>
+  <% @chairs.each do |chair| %>
+  <li> <%= link_to chair.name, chair_path(chair) %> </li>
+  <% end %>
+</ol>
+</div>

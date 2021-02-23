@@ -4,42 +4,40 @@
       <%= simple_form_for :search, url: root_path, method: :get do |f| %>
           <form>
             <div class="form-row bg-white d-flex rounded-pill py-2 pl-5 mt-2 mx-5 form-bg">
-              <div class="col-4">
+              <div class="col-3">
                 <input type="text" class="form-control input-border" placeholder="Location">
               </div>
-              <div class="col-4">
-                <input type="date" class="form-control input-border" placeholder="Date">
+              <div class="col-3">
+                <input type="date" class="form-control input-border" placeholder="chech-in">
+              </div>
+              <div class="col-3">
+                <input type="date" class="form-control input-border" placeholder="check-out">
               </div>
               <div class="col-2">
-                <input type="integer" class="form-control border-0" placeholder="Amount">
+                <input type="integer" class="form-control border-0" placeholder="How many chairs?">
               </div>
-              <div class="col-1 pl-5">
+              <div class="col-1 pl-3">
                 <button name="search" type="submit" class="btn custom-button rounded-circle"><i class="fas fa-search fa-search-icon"></i> </button>
               </div>
             </div>
           </form>
-      <% end %> -->
+      <% end %>
   </div>
 </div>
 
+<div class="container mt-5">
+  <div class="cards">
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.pixabay.com/photo/2017/03/28/12/11/chairs-2181960__340.jpg)">
+      Office Chairs
+    </div>
 
-<div class="container mt-3">
-  <div class="row">
-    <div class="col">
-      <img  class="card-category-images" src="https://cdn.pixabay.com/photo/2017/03/28/12/11/chairs-2181960__340.jpg" alt="office chairs">
-      <h2>Office Chairs</h2>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.pixabay.com/photo/2016/11/23/17/56/beach-1854076_960_720.jpg)">
+      Party Chairs
     </div>
-    <div class="col">
-      <img class="card-category-images" src="https://cdn.pixabay.com/photo/2016/11/23/17/56/beach-1854076_960_720.jpg" alt="party chairs">
-      <h2>Party Chairs</h2>
-    </div>
-    <div class="col">
-      <img class="card-category-images" src="https://cdn.pixabay.com/photo/2017/03/25/23/32/kitchen-2174593__340.jpg" alt="home chairs">
-      <h2>Home Chairs</h2>
+
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.pixabay.com/photo/2017/03/25/23/32/kitchen-2174593__340.jpg)">
+      Home Chairs
     </div>
   </div>
 </div>
 
-
-<%#= current_user.attributes %>
-<% user_signed_in? %>

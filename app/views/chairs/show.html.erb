@@ -1,6 +1,11 @@
 <div class="container">
   <h1> <%= @chair.name %> </h1>
-  <p> <%= link_to "Back", chairs_path %> </p>
-</div>
 
-<%= cl_image_tag @chair.photo.key, height: 300, width: 400, crop: :fit %>
+
+  <%= cl_image_tag @chair.photo.key, height: 300, width: 400, crop: :fit %>
+
+
+  <p> <%= link_to "Back", chairs_path %> </p>
+  <p> <%= link_to "Edit", edit_chair_path(@chair) %> </p>
+  <p> <%= link_to "Delete", @chair, method: :delete, data: { confirm: 'Are you sure?' } %> </p>
+</div>

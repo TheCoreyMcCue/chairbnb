@@ -6,6 +6,7 @@ class Chair < ApplicationRecord
 
   belongs_to :user, dependent: :destroy
   has_many :reservations
+  has_one_attached :photo
   #has_many :reviews through: :reservations
 
 end

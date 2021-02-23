@@ -1,3 +1,16 @@
-<div class="container">
-  <h1> <%= @chair.name %> </h1>
+
+<div class="container chair-card">
+  <h1 class="text-center"> <%= @chair.name %> </h1>
+  <div class="d-flex">
+  <div class="img mx-3"> <%= cl_image_tag @chair.photo.key, height: 300, width: 400, crop: :fit %> </div>
+  <div class="des">
+    <p>Description: <%= @chair.description %></p>
+    <p>Location: <%= @chair.location %> </p>
+    <p>Price: <%= @chair.price %> €</p>
+    <p> <%= link_to "Back", chairs_path %> </p>
+  </div>
+  </div>
+
 </div>
+
+

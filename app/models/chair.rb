@@ -4,7 +4,7 @@ class Chair < ApplicationRecord
   validates :price, presence: true
   #validates :image, presence: true
 
-  belongs_to :user, dependent: :destroy
+  belongs_to :user
   has_many :reservations
   has_one_attached :photo
   #has_many :reviews through: :reservations

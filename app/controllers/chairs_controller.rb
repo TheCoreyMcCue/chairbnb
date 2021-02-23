@@ -28,6 +28,12 @@ class ChairsController < ApplicationController
     authorize @chair
   end
 
+  def update
+    @chair.update(chair_params)
+    redirect_to chair_path(@chair)
+    authorize(@chair)
+  end
+
   def destroy
     @chair.destroy
     authorize(@chair)

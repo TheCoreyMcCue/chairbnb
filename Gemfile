@@ -29,6 +29,7 @@ gem 'devise'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary', '~> 1.16.0'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'

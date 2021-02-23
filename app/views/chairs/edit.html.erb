@@ -1,0 +1,7 @@
+<h1>Edit Your Chair</h1>
+
+<%= render 'form', chair: @chair %>
+
+<%= link_to 'Show', @chair %> |
+<%= link_to 'Back', chairs_path %>
+<%= link_to 'Destroy', @chair, method: :delete, data: { confirm: 'Are you sure?' } %>

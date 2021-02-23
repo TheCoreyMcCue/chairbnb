@@ -6,15 +6,17 @@
     <p>Description: <%= @chair.description %></p>
     <p>Location: <%= @chair.location %> </p>
     <p>Price: <%= @chair.price %> €</p>
-    <p> <%= link_to "Back", chairs_path %> </p>
-    <p> <%= link_to "Edit", edit_chair_path(@chair) %> </p>
-    <p> <%= link_to "Delete", @chair, method: :delete, data: { confirm: 'Are you sure?' } %> </p>
+
+    <p> <%= link_to "Back", chairs_path, class: "btn btn-info" %>
+    <%= link_to "Edit", edit_chair_path(@chair), class: "btn btn-warning" %>
+    <%= link_to "Delete", @chair, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %> </p>
+
   </div>
   </div>
 
 </div>
 
- 
 
 
+<%= @chair.user.email %>
 

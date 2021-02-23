@@ -1,11 +1,22 @@
 <div class="container">
-<h1>All Chairs</h1>
-<p> <%= link_to "Create new Chair", new_chair_path %> </p>
-<ol>
+<h1>All Chairs <%= link_to "+", new_chair_path, class: "btn btn-primary text-white"%></h1>
+
+
+<br>
+<div class="list">
   <% @chairs.each do |chair| %>
-    <li> <%= link_to chair.name, chair_path(chair) %> </li>
+  <div class="card-product mt-3">
+  <%= cl_image_tag chair.photo.key, crop: :fit %>
+  <div class="card-product-infos">
+    <h2><%= link_to chair.name, chair_path(chair) %></h2>
+    <p> <%= chair.description   %> </p>
+  </div>
+</div>
+
   <% end %>
-</ol>
+</div>
 </div>
 
 
+
+<%= current_user.email %>

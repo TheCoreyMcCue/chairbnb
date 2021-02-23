@@ -2,3 +2,5 @@
   <h1> <%= @chair.name %> </h1>
   <p> <%= link_to "Back", chairs_path %> </p>
 </div>
+
+<%= cl_image_tag @chair.photo.key, height: 300, width: 400, crop: :fit %>

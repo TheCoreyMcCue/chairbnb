@@ -1,4 +1,3 @@
-
 <div class="container chair-card">
   <h1 class="text-center"> <%= @chair.name %> </h1>
   <div class="d-flex">
@@ -8,9 +7,14 @@
     <p>Location: <%= @chair.location %> </p>
     <p>Price: <%= @chair.price %> €</p>
     <p> <%= link_to "Back", chairs_path %> </p>
+    <p> <%= link_to "Edit", edit_chair_path(@chair) %> </p>
+    <p> <%= link_to "Delete", @chair, method: :delete, data: { confirm: 'Are you sure?' } %> </p>
   </div>
   </div>
 
 </div>
+
+ 
+
 
 

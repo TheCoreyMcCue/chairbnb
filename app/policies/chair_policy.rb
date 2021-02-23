@@ -6,18 +6,18 @@ class ChairPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    return true
+  end
+
+  def update?
+    record.user == user
   end
 
   def destroy?
-    owner_or_admin?
+    record.user == user
   end
 
   def show?
     true
-  end
-
-  def update?
-    owner_or_admin?
   end
 end

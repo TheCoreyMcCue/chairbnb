@@ -2,7 +2,7 @@
   <div class="container">
     <h1 class="text-center">Rent your beautiful chair with <strong>ChairBnB<strong></h1>
       <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-          <form>
+          <form action="/chairs">
             <div class="form-row bg-white d-flex rounded-pill py-2 pl-5 mt-2 mx-5 form-bg">
               <div class="col-3">
                 <input type="text" class="form-control input-border" placeholder="Location">
@@ -13,11 +13,12 @@
               <div class="col-3">
                 <input type="date" class="form-control input-border" placeholder="check-out">
               </div>
-              <div class="col-2">
+              <div class="col-lg-2">
                 <input type="integer" class="form-control border-0" placeholder="How many chairs?">
               </div>
               <div class="col-1 pl-3">
-                <button name="search" type="submit" class="btn custom-button rounded-circle"><i class="fas fa-search fa-search-icon"></i> </button>
+                <!-- <button name="search" type="submit" class="btn custom-button rounded-circle"><i class="fas fa-search fa-search-icon"></i></button> -->
+                 <%= link_to "", chairs_path, class: "fas fa-search fa-search-icon btn custom-button mr-1"  %>
               </div>
             </div>
           </form>

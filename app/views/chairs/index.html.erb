@@ -1,6 +1,6 @@
 <div class="container">
 <h1>All Chairs</h1>
-
+<p> <%= link_to "Create new Chair", new_chair_path %> </p>
 <ol>
   <% @chairs.each do |chair| %>
   <li> <%= link_to chair.name, chair_path(chair) %> </li>

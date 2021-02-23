@@ -1,6 +1,8 @@
-<%= render 'form', chair: @chair %>
-
-
-<% if policy(Chair).create? %>
-  <%= link_to "New chair", new_chair_path %>
-<% end %>
+<div class="new-chair">
+  <div class="container">
+    <h2>Create a new chair</h2>
+    <div class="container mt-2">
+      <%= render 'form', chair: @chair %>
+    </div>
+  </div>
+</div>

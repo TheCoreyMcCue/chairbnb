@@ -6,9 +6,9 @@
     <p>Description: <%= @chair.description %></p>
     <p>Location: <%= @chair.location %> </p>
     <p>Price: <%= @chair.price %> €</p>
-    <p> <%= link_to "Back", chairs_path, class: "btn btn-info" %> </p>
-    <p> <%= link_to "Edit", edit_chair_path(@chair), class: "btn btn-warning" %> </p>
-    <p> <%= link_to "Delete", @chair, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %> </p>
+    <p> <%= link_to "Back to all chairs", chairs_path, class: "btn btn-info" %> </p>
+    <p> <%= link_to "Edit this chair", edit_chair_path(@chair), class: "btn btn-warning" %> </p>
+    <p> <%= link_to "Delete this chair", @chair, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %> </p>
   </div>
   </div>
 

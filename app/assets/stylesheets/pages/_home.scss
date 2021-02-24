@@ -23,7 +23,13 @@
 
 
 @media (max-width: 575px) {
+  .desktop-search-bar {
+    display:none;
+  }
 }
 
 @media (min-width: 576px) {
+  .mobile-search-bar {
+    display:none;
+  }
 }

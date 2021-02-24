@@ -1,4 +1,6 @@
-
+.map{
+  flex-grow: 1;
+}
 
 .scroll{
   height:600px;
@@ -11,3 +13,4 @@
     flex-direction: column-reverse;
     }
 }
+

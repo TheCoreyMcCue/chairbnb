@@ -1,8 +1,10 @@
 
 <div class="container-fluid">
-  <h1 class="mt-5">Available Chairs near you </h1>
+
 
   <div class="container-fluid">
+
+<h1 class="mt-5">Available Chairs near you </h1>
     <div class="chairs-wrapper row">
       <div class="scroll col-12 col-md-8">
           <% @chairs.each do |chair| %>
@@ -11,7 +13,8 @@
           <div class="card-product-infos">
             <h2><%= link_to chair.name, chair_path(chair) %></h2>
             <p> <%= chair.description   %> </p>
-            <p> €<%= chair.price %></p>
+            <p> €<%= chair.price %> ,created by <%= chair.user.email  %></p>
+
          </div>
         </div>
         <% end %>

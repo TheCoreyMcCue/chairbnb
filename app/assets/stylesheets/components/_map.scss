@@ -1,0 +1,13 @@
+
+
+.scroll{
+  height:600px;
+  overflow:scroll;
+
+}
+
+@media (max-width: 576px) {
+  .chairs-wrapper {
+    flex-direction: column-reverse;
+    }
+}

@@ -1,6 +1,5 @@
 <div class="container">
-<h1 class="mt-5">All Chairs <%= link_to "+", new_chair_path, class: "btn btn-primary text-white"%></h1>
-
+<h1 class="mt-5 d-flex justify-content-center">All Chairs</h1>
 
 <br>
 <div class="list">
@@ -9,7 +8,8 @@
   <%= cl_image_tag chair.photo.key, crop: :fit %>
   <div class="card-product-infos">
     <h2><%= link_to chair.name, chair_path(chair) %></h2>
-    <p> <%= chair.description   %> </p>
+    <h4> <%= chair.description %> <h4>
+    <p> €<%= chair.price %></p>
   </div>
 </div>
 

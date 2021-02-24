@@ -2,7 +2,7 @@
   <div class="container">
     <h1 class="text-center">Rent your beautiful chair with <strong>ChairBnB<strong></h1>
       <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-          <form action="/chairs">
+          <form action="/chairs" class="desktop-search">
             <div class="form-row bg-white d-flex rounded-pill py-2 pl-5 mt-2 mx-5 form-bg">
               <div class="col-3">
                 <input type="text" class="form-control input-border" placeholder="Location">
@@ -23,6 +23,7 @@
             </div>
           </form>
       <% end %>
+  </div>
   </div>
 </div>
 

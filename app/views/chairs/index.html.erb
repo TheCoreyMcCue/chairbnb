@@ -1,5 +1,6 @@
+
 <div class="container-fluid">
-  <h1 class="mt-5">Available Chairs near you <%= link_to "+", new_chair_path, class: "btn btn-primary text-white"%></h1>
+  <h1 class="mt-5">Available Chairs near you </h1>
 
   <div class="container-fluid">
     <div class="chairs-wrapper row">
@@ -10,6 +11,7 @@
             <div class="card-product-infos">
               <h2><%= link_to chair.name, chair_path(chair) %></h2>
               <p> <%= chair.description   %> </p>
+              <p> €<%= chair.price %></p>
             </div>
           </div>
          <% end %>

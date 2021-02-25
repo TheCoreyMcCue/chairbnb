@@ -4,6 +4,12 @@ class ChairsController < ApplicationController
   def index
     @chairs = Chair.all
     @chairs = policy_scope(Chair).order(created_at: :desc)
+    @markers = @chairs.geocoded.map do |chair|
+      {
+        lat: chair.latitude,
+        lng: chair.longitude
+      }
+    end
   end
 
   def show

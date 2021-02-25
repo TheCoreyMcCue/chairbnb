@@ -1,7 +1,7 @@
 class ReservationsController < ApplicationController
   def index
-    @reservations = Reservation.all
-    @reservations = policy_scope(Reservation).order(created_at: :desc)
+    @reservations = policy_scope(Reservation).where(user_id: current_user.id).order(created_at: :desc)
+    @listing = Chair.where(user: current_user)
   end
 
   def edit
@@ -9,16 +9,24 @@ class ReservationsController < ApplicationController
   end
 
   def create
+    @user = current_user
     @chair = Chair.find(params[:chair_id])
-    @reservation = Reservation.new(reservation_params)
-    @reservations.chair = @chair
+    @reservation = Reservation.create(reservation_params)
+    @reservation.chair = @chair
+    @reservation.user = @user
     authorize(@reservation)
     if @reservation.save
-      render :show
-    else
-      render :new
-    end
 
+      redirect_to reservation_path(@reservation), notice: "Reservation was saved succsessfully!"
+    else
+      redirect_to chair_path(@chair), notice: "Could not create Reservation!"
+    end
+  end
+
+  def show
+    @reservation = Reservation.find(params[:id])
+    authorize(@reservation)
+    #@reservation = policy_scope(Reservation).order(created_at: :desc)
   end
 
   def destroy

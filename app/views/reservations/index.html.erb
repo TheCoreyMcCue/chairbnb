@@ -1,4 +1,17 @@
-<h1>All reservations</h1>
+<div class="container">
+<h1>Your reservations</h1>
 <% @reservations.each do |res| %>
-  <%= ers.start_date %>
+  <p> <strong> <%= res.chair.name %> </strong> <%= res.start_date.strftime("%-d-%-m-%Y") %> - <%= res.end_date.strftime("%-d-%-m-%Y")  %> </p>
+  <p> Created by <%= res.user.email %> and <%= res.approved ? "approved by chair owner" : "not approved yet" %></p>
+  <br>
 <% end %>
+
+<h2>Your Listings</h2>
+
+ <% @listing.each do |res| %>
+  <%= res.name %>
+  <%= res.location %>
+  <br>
+<% end %>
+
+</div>

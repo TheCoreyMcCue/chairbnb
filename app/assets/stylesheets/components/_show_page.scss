@@ -26,6 +26,11 @@
   width:300px;
 }
 
+.fas, .far {
+  color: #E36448;
+  font-size: 1.2rem;
+}
+
 @media (max-width: 576px) {
   .show-flex-layout {
   flex-direction:column;

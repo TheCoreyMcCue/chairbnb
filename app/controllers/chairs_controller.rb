@@ -7,6 +7,7 @@ class ChairsController < ApplicationController
   end
 
   def show
+    @reservations = Reservation.new
     @chair = Chair.find(params[:id])
     authorize(@chair)
   end

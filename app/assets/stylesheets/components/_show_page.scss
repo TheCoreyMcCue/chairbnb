@@ -5,7 +5,6 @@
 
 .show-flex-layout {
   display:flex;
-  position: relative;
 }
 
 .show-bg {
@@ -21,13 +20,15 @@
   justify-content:right;
   padding: 10px;
   border-radius: 10px;
-  position: absolute;
-  top:0;
-  right:0;
-
 }
+
 .child1, child2, child3 {
   width:300px;
+}
+
+.fas, .far {
+  color: #E36448;
+  font-size: 1.2rem;
 }
 
 @media (max-width: 576px) {

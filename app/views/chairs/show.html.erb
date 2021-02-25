@@ -35,8 +35,12 @@
 
   <div class="actions d-flex justify-content-center">
     <p> <%= link_to "Back to available chairs", chairs_path, class: "btn btn-info mx-1 mt-3 text-white" %> </p>
-    <p> <%= link_to "Edit this chair", edit_chair_path(@chair), class: "btn btn-warning mx-1 mt-3" %> </p>
-    <p> <%= link_to "Delete this chair", @chair, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger mx-1 mt-3" %> </p>
+    <% if policy(@chair).update? %>
+      <p> <%= link_to "Edit this chair", edit_chair_path(@chair), class: "btn btn-warning mx-1 mt-3" %> </p>
+    <% end %>
+    <% if policy(@chair).destroy? %>
+      <p> <%= link_to "Delete this chair", @chair, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger mx-1 mt-3" %> </p>
+    <% end %>
   </div>
 </div>
 

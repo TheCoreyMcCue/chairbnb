@@ -6,7 +6,7 @@ class ChairPolicy < ApplicationPolicy
   end
 
   def create?
-    return true
+    true
   end
 
   def update?
@@ -18,6 +18,10 @@ class ChairPolicy < ApplicationPolicy
   end
 
   def show?
+    true
+  end
+
+  def index?
     true
   end
 end

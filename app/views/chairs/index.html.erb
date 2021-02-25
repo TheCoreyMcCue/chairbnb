@@ -4,23 +4,22 @@
 
   <div class="container-fluid">
 
-<h1 class="mt-5">Available Chairs near you </h1>
+    <h1 class="mt-5">Available Chairs near you </h1>
     <div class="chairs-wrapper row">
       <div class="scroll col-12 col-md-8">
-          <% @chairs.each do |chair| %>
-          <div class="card-product mt-3">
-            <%= cl_image_tag chair.photo.key, crop: :fit %>
+        <% @chairs.each do |chair| %>
+        <div class="card-product mt-3">
+          <%= cl_image_tag chair.photo.key, crop: :fit %>
           <div class="card-product-infos">
             <h2><%= link_to chair.name, chair_path(chair) %></h2>
             <p> <%= chair.description   %> </p>
             <p> €<%= chair.price %> listing posted by <%= chair.user.email  %></p>
-
-         </div>
+          </div>
         </div>
         <% end %>
       </div>
       <div class="map col-12 col-md-4">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d155959.15386441897!2d4.763533849953428!3d52.3547921294949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c63fb5949a7755%3A0x6600fd4cb7c0af8d!2sAmsterdam%2C%20Niederlande!5e0!3m2!1sde!2sde!4v1614167834681!5m2!1sde!2sde" width="300" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>    </div>
-
-  </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d155959.15386441897!2d4.763533849953428!3d52.3547921294949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c63fb5949a7755%3A0x6600fd4cb7c0af8d!2sAmsterdam%2C%20Niederlande!5e0!3m2!1sde!2sde!4v1614167834681!5m2!1sde!2sde" width="300" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
 </div>

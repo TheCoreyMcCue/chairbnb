@@ -4,12 +4,6 @@ class ReservationsController < ApplicationController
     @reservations = policy_scope(Reservation).order(created_at: :desc)
   end
 
-  def new
-    @chair = Chair.find(params[:chair_id])
-    @reservations = Reservation.new
-    authorize(@reservation)
-  end
-
   def edit
     authorize(@reservation)
   end

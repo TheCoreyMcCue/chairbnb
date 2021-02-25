@@ -20,7 +20,7 @@ require 'faker'
     chair = Chair.new(
       user: user,
       name:    Faker::Company.name,
-      location: "#{Faker::Address.street_address}, #{Faker::Address.city}",
+      location: "Amsterdam",
       price:  rand(0..75)
     )
     chair.save!

@@ -1,5 +1,6 @@
 class ChairsController < ApplicationController
-  before_action :set_chair, only: %i[ show edit update destroy ]
+  skip_before_action :authenticate_user!, only: %i[index show]
+  before_action :set_chair, only: %i[show edit update destroy]
   def index
     @chairs = Chair.all
     @chairs = policy_scope(Chair).order(created_at: :desc)
@@ -29,14 +30,14 @@ class ChairsController < ApplicationController
   end
 
   def update
+    authorize(@chair)
     @chair.update(chair_params)
     redirect_to chair_path(@chair)
-    authorize(@chair)
   end
 
   def destroy
-    @chair.destroy
     authorize(@chair)
+    @chair.destroy
     redirect_to chairs_url
   end
 

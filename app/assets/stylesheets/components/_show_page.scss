@@ -7,7 +7,7 @@
   box-shadow: 1px 1px 3px #cecece;
   background: #fff;
   border-radius: 5px;
-  height: 400px;
+  height: 450px;
 }
 
 .image-wrapper img {
@@ -23,16 +23,19 @@
 }
 
 .check-availabity {
-  height: 150px;
   border: 1px solid #cecece;
   padding: 10px;
   border-radius: 10px;
-  height: 300px;
+  height: 350px;
 }
 
 .fas, .far {
   color: #E36448;
   font-size: 1.2rem;
+}
+
+.fa-chevron-circle-left {
+  font-size: 1.6rem;
 }
 
 @media (max-width: 576px) {

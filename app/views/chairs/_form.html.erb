@@ -5,6 +5,13 @@
     <%= f.input :description %>
     <%= f.input :price %>
     <%= f.input :photo, as: :file %>
-    <%= f.submit "submit", class:'btn btn-primary' %>
+    <div class="d-flex">
+      <%= f.submit "submit", class:'btn btn-primary' %>
+      <% if action_name == 'edit' %>
+        <%= link_to(chair, method: :delete, data: { confirm: 'Are you sure?' }, class: "ml-2") do %>
+        <i class="far fa-trash-alt"></i>
+      <% end %>
+      <% end %>
+    </div>
   <% end %>
 </div>

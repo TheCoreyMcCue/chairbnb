@@ -17,11 +17,10 @@
                 <div class="col-lg-2">
                   <input type="integer" class="form-control border-0" placeholder="How many chairs?">
                 </div>
-                <div class="col-1">
+                <div class="col-1 pl-3">
                   <!-- <button name="search" type="submit" class="btn custom-button rounded-circle"><i class="fas fa-search fa-search-icon"></i></button> -->
-                  <i class="fas fa-search-icon">
-                    <%= f.button :submit, class: "btn btn-primary rounded-circle", value: "search" do %>
-                  </i>
+                 <%= f.button :submit, value: "Search", class: "btn btn-primary rounded-circle" do %>
+                  <!-- <i class="fas fa-search fa-search-icon"></i> -->
                  <% end %>
               </div>
             </div>

@@ -1,17 +1,75 @@
 <div class="container">
-<h1>Your reservations</h1>
-<% @reservations.each do |res| %>
-  <p> <strong> <%= res.chair.name %> </strong> <%= res.start_date.strftime("%-d-%-m-%Y") %> - <%= res.end_date.strftime("%-d-%-m-%Y")  %> </p>
-  <p> Created by <%= res.user.email %> and <%= res.approved ? "approved by chair owner" : "not approved yet" %></p>
-  <br>
-<% end %>
+<h1 class="mb-3"> Welcome <%= current_user.email %>!</h1>
+<br>
 
-<h2>Your Listings</h2>
+    <h2>Your Reservation Requests</h2>
+    <div class="container">
+      <%  if @requests.blank? %>
+        <%= "No one has requested your chairs yet" %>
+      <% else %>
+        <% @requests.each do |re| %>
+          <p> <%= re.user.email %> has requested to rent <strong> <%= re.chair.name %> </strong> from <%= re.start_date.strftime("%-d-%-m-%Y")%> to <%= re.end_date.strftime("%-d-%-m-%Y")%></p>
+          <div id="approved-<%= re.id %>">
+            <% if !re.approved  %>
+              <%= simple_form_for([re], remote: true) do |f| %>
+                <%= f.input :approved, as: :boolean%>
+              <%=  f.submit 'save changes' %>
+              <% end %>
+            <% else %>
+              <p>You have approved this rent</p>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
 
- <% @listing.each do |res| %>
-  <%= res.name %>
-  <%= res.location %>
-  <br>
-<% end %>
+    <br>
+    <h2>Your Reservations</h2>
+    <div class="container">
+      <% if @reservations.blank? %>
+        <%= "You have no reservations yet." %>
+      <% else %>
+        <% @reservations.each do |res|  %>
+        <div class="card-product mt-3">
+          <%= cl_image_tag res.chair.photo.key, crop: :fit %>
+          <div class="card-product-infos">
+            <h2><%= res.chair.name %></h2>
+            <p> <%= res.start_date.strftime("%-d-%-m-%Y") %> - <%= res.end_date.strftime("%-d-%-m-%Y")  %> </p>
+            <p> €<%= res.chair.price %> listing posted by <%= res.chair.user.email  %></p>
+            <p> <%= res.approved ? "Approved by #{res.chair.user.email}" : "Not approved by #{res.chair.user.email} yet" %></p>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+      <br>
+    </div>
 
+    <h2>Your Listings</h2>
+    <div class="container">
+      <% if @listing.blank? %>
+        <%= "You have no listings yet" %>
+      <% else %>
+
+        <% @listing.each do |chair| %>
+        <div class="card-product mt-3">
+          <%= cl_image_tag chair.photo.key, crop: :fit %>
+          <div class="card-product-infos">
+            <h2><%= link_to chair.name, chair_path(chair) %></h2>
+            <p> <%= chair.description   %> </p>
+            <p> €<%= chair.price %> listing posted by <%= chair.user.email  %></p>
+          </div>
+        </div>
+        <% end %>
+
+      <% end %>
+    </div>
 </div>
+
+
+
+
+
+
+
+
+

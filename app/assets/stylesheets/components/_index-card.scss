@@ -14,7 +14,7 @@
   object-fit: cover;
 }
 
-#listing-price {
+.listing-price {
   font-size: 1.5rem;
   font-weight: 600;
   opacity: .8;
@@ -36,6 +36,7 @@
   color: #E36448;
   text-decoration: none;
 }
+
 .card-product h2 a:hover {
   color: #279af1;
 }

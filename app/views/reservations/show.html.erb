@@ -1,5 +1,10 @@
-<div class="container text-center" >
-  <h3>You succsessfully created a reservation for the <%= @reservation.start_date.strftime("%-d-%-m-%Y")%> to <%= @reservation.end_date.strftime("%-d-%-m-%Y")%> for <strong> <%= @reservation.chair.name %> </strong></h3>
+<div class="container text-center reservation-container d-flex flex-column align-items-center justify-content-center" >
+  <h3 class="mt-5">You succsessfully created a reservation for the <%= @reservation.start_date.strftime("%-d-%-m-%Y")%> to <%= @reservation.end_date.strftime("%-d-%-m-%Y")%> for <strong> <%= @reservation.chair.name %> </strong></h3>
   <p> Waitig for <%= @reservation.chair.user.email %> to approve your request...( <%= link_to "Profile",reservations_path  %> )</p>
-  <%= link_to "Continue shopping?", chairs_path  %>
+
+
+<iframe src="https://giphy.com/embed/dlFB2FeJFHi8M" width="451" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/fail-dance-chair-dlFB2FeJFHi8M"></a></p>
+
+<%= link_to "Continue shopping?", chairs_path  %>
+
 </div>

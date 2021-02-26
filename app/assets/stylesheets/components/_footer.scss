@@ -15,9 +15,18 @@
 
 .fab {
   color: #fff;
+  font-size: 1rem;
 }
 
 .copyright {
   color:#fff;
   font-weight: 400;
+}
+
+.footer-hr {
+  border: .8px solid #fff;
+}
+
+@media (max-width: 576px) {
+
 }

@@ -2,8 +2,13 @@ class ChairsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_chair, only: %i[show edit update destroy]
   def index
-    @chairs = Chair.all
+    # @chairs = Chair.all
     @chairs = policy_scope(Chair).order(created_at: :desc)
+    if params.dig(:search, :location).present?
+      @chairs = @chairs.where(location: params.dig(:search, :location))
+    else
+      @chairs = @chairs.all
+    end
     @markers = @chairs.geocoded.map do |chair|
       {
         lat: chair.latitude,

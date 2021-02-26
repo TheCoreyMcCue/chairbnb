@@ -7,7 +7,10 @@
 
       <%= link_to 'Back', @chair, class: "btn btn-info mt-2" %> |
       <%= link_to 'Back to all chairs', chairs_path, class: "btn btn-warning mt-2" %>
-      <%= link_to 'Delete this chair', @chair, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger mt-2" %>
+      <div>
+        <%= link_to(@chair, method: :delete, data: { confirm: 'Are you sure?' }) %>
+        <i class="far fa-trash-alt"></i>
+      </div>
     </div>
   </div>
 </div>

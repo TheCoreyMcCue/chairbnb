@@ -34,7 +34,7 @@ class ReservationsController < ApplicationController
   def show
     @reservation = Reservation.find(params[:id])
     authorize(@reservation)
-    #@reservation = policy_scope(Reservation).order(created_at: :desc)
+    # @reservation = policy_scope(Reservation).order(created_at: :desc)
   end
 
   def destroy
@@ -48,9 +48,4 @@ class ReservationsController < ApplicationController
   def reservation_params
     params.require(:reservation).permit(:user_id, :chair_id, :start_date, :end_date, :total_price, :approved)
   end
-
 end
-
-
-
-

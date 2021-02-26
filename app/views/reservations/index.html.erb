@@ -1,8 +1,8 @@
 <div class="container">
-<h1 class="mb-3"> Welcome <%= current_user.email %>!</h1>
+<h1 class="my-3 ml-3"> Welcome <%= current_user.email %>!</h1>
 <br>
 
-    <h2>Your Reservation Requests</h2>
+    <h2 class="ml-3">Your Reservation Requests</h2>
     <div class="container">
       <%  if @requests.blank? %>
         <%= "No one has requested your chairs yet" %>
@@ -24,7 +24,7 @@
     </div>
 
     <br>
-    <h2>Your Reservations</h2>
+    <h2 class="ml-3">Your Reservations</h2>
     <div class="container">
       <% if @reservations.blank? %>
         <%= "You have no reservations yet." %>
@@ -33,9 +33,10 @@
         <div class="card-product mt-3">
           <%= cl_image_tag res.chair.photo.key, crop: :fit %>
           <div class="card-product-infos">
-            <h2><%= res.chair.name %></h2>
+            <h2 style="color: #E36448;" ><%= res.chair.name %></h2>
             <p> <%= res.start_date.strftime("%-d-%-m-%Y") %> - <%= res.end_date.strftime("%-d-%-m-%Y")  %> </p>
-            <p> €<%= res.chair.price %> listing posted by <%= res.chair.user.email  %></p>
+            <div class="listing-price"> €<%= res.chair.price %> <span class="per-day-tag"> /day</span></div>
+            <p>Listed by <%= res.chair.user.email %></p>
             <p> <%= res.approved ? "Approved by #{res.chair.user.email}" : "Not approved by #{res.chair.user.email} yet" %></p>
           </div>
         </div>
@@ -44,7 +45,7 @@
       <br>
     </div>
 
-    <h2>Your Listings</h2>
+    <h2 class="ml-3">Your Listings</h2>
     <div class="container">
       <% if @listing.blank? %>
         <%= "You have no listings yet" %>
@@ -55,8 +56,9 @@
           <%= cl_image_tag chair.photo.key, crop: :fit %>
           <div class="card-product-infos">
             <h2><%= link_to chair.name, chair_path(chair) %></h2>
-            <p> <%= chair.description   %> </p>
-            <p> €<%= chair.price %> listing posted by <%= chair.user.email  %></p>
+            <p> <%= chair.description&.truncate(155, separator: " ") %> </p>
+            <div class="listing-price"> € <%= chair.price %> <span class="per-day-tag"> /day</span></div>
+            <p> Listed by <%= chair.user.email %></p>
           </div>
         </div>
         <% end %>

@@ -14,7 +14,7 @@
             <div>
               <h2><%= link_to chair.name.capitalize, chair_path(chair) %></h2>
               <p> <%= chair.description&.truncate(155, separator: " ") %> </p>
-              <div id="listing-price"> € <%= chair.price %> <span class="per-day-tag"> /day</span></div>
+              <div class="listing-price"> € <%= chair.price %> <span class="per-day-tag"> /day</span></div>
               <p>Listed by: <%= chair.user.email %></p>
             </div>
           </div>

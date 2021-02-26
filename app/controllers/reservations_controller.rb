@@ -2,11 +2,19 @@ class ReservationsController < ApplicationController
   def index
     @reservations = policy_scope(Reservation).where(user_id: current_user.id).order(created_at: :desc)
     @listing = Chair.where(user: current_user)
+    @requests = Reservation.joins(:chair).where(chair:{user: current_user})
+    #@reservation = Reservation.find(params[:reservation_id])
   end
 
-  def edit
+  def update
+
+    @reservation = Reservation.find(params[:id])
+    @reservation.approved = true
     authorize(@reservation)
+    @reservation.save
+
   end
+
 
   def create
     @user = current_user

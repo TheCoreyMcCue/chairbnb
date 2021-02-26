@@ -1,3 +1,5 @@
-<div class="container p-5" >
+<div class="container text-center" >
   <h3>You succsessfully created a reservation for the <%= @reservation.start_date.strftime("%-d-%-m-%Y")%> to <%= @reservation.end_date.strftime("%-d-%-m-%Y")%> for <strong> <%= @reservation.chair.name %> </strong></h3>
+  <p> Waitig for <%= @reservation.chair.user.email %> to approve your request...( <%= link_to "Profile",reservations_path  %> )</p>
+  <%= link_to "Continue shopping?", chairs_path  %>
 </div>

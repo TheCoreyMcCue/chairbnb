@@ -1,16 +1,17 @@
 <div class="edit-page">
   <div class="container d-flex justify-content-center">
+    <div>
+      <%= link_to chair_path(@chair) do %>
+        <i class="fas fa-chevron-circle-left"></i>
+      <% end %>
+    </div>
     <div class="col-6 img mx-3">
       <h1>Edit Your Chair</h1>
 
       <%= render 'form', chair: @chair %>
 
-      <%= link_to 'Back', @chair, class: "btn btn-info mt-2" %> |
-      <%= link_to 'Back to all chairs', chairs_path, class: "btn btn-warning mt-2" %>
-      <div>
-        <%= link_to(@chair, method: :delete, data: { confirm: 'Are you sure?' }) %>
-        <i class="far fa-trash-alt"></i>
-      </div>
+      <%#= link_to 'Back', @chair, class: "btn btn-info mt-2" %>
+
     </div>
   </div>
 </div>
